@@ -14,13 +14,24 @@ class ApiController < ApplicationController
       render json: { message: "Senha precisa estar presente" }, status: 400
       return
     end
+
+    unless params[:email].match(/\A[^@\s]+@[^@\s]+\z/)
+      render json: { message: "Email Invalido" }, status: 400
+      return
+    end
+
     user = User.where(email: params[:email]).first
 
     unless user.nil?
       render json: { message: "Já existe conta com esse email"  }, status: 400
       return
     end
-    
+
+    if params[:password].length < 6
+      render json: { message: "Password deve ter no minimo 6 caracteres"  }, status: 400
+      return
+    end
+
     u = User.new
     u.name = params[:name]
     u.email = params[:email]

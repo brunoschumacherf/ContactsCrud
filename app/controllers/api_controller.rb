@@ -52,4 +52,9 @@ class ApiController < ApplicationController
       render json: { message: "Faça o login" }, status: 400
     end
   end
+
+  def sign_out
+    signOut
+    render json: { message: "Faça o login" }, status: 400
+  end
 end

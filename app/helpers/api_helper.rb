@@ -7,4 +7,9 @@ module ApiHelper
     @current_user ||= User.find_by(email: session[:user_email])
   end
 
+  def signOut
+    session.delete(:user_email)
+    @current_user = nil
+  end
+
 end

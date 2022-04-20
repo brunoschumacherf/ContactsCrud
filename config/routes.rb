@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'api/new'
-  resources :users
   post 'user/create' => 'api#createUser'
   post 'user/login' => 'api#login'
+  get 'user/sign_out' => 'api#sign_out'
   post 'contact/create' => 'contact#CreateUsecontacts'
   get 'contact/findContacts' => 'contact#findContacts'
   post 'contact/deleteContacts' => 'contact#deleteContacts'

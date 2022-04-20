@@ -1,24 +1,64 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* db https://dbdiagram.io/d/625f564d1072ae0b6ab11b1a
 
-* Ruby version
 
-* System dependencies
+#Request
 
-* Configuration
+* user/create
+POST
+{
+    "name": "",
+    "email": ",
+    "password": ""
+}
 
-* Database creation
+* user/login
+POST
+{
+    "email": "",
+    "password": ""
+}
 
-* Database initialization
 
-* How to run the test suite
+## a partir daqui só é possivel fazer request logado
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* contact/create
+POST
+
+{
+    "name": "",
+    "relationship": "",
+    "phone": ""
+}
+Phone é um parametro não obrigatorio
+
+* contact/findContacts
+GET
+Nenhum parametro (apenas contatos salvo pela conta)
+
+* contact/deleteContacts
+POST
+{
+    "id": ""
+}
+Pegar id no find
+
+
+* contact/updateContacts
+POST
+
+{
+    "id": "9",
+    "name": "Brunooo",
+    "relationship": "goku2447",
+    "phone": "7317317"
+}
+Apenas o id é obrigatorio
+
+* user/sign_out
+
+Deslogar do usuário atual
 
 * ...

@@ -2,6 +2,16 @@
 
 * db https://dbdiagram.io/d/625f564d1072ae0b6ab11b1a
 
+Rodar migrate
+```bash
+    rails db:migrat
+```
+
+Rodar servidor rails
+
+```bash
+    rails s
+```
 
 #Request
 

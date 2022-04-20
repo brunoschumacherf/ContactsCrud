@@ -6,7 +6,7 @@ class ContactController < ApiController
       return
     end
     if params[:relationship].blank?
-      render json: { message: "Email precisa estar presente"  }, status: 400
+      render json: { message: "Relação precisa estar presente"  }, status: 400
       return
     end
 

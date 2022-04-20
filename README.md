@@ -4,13 +4,13 @@
 
 Rodar migrate
 ```bash
-    rails db:migrat
+rails db:migrat
 ```
 
 Rodar servidor rails
 
 ```bash
-    rails s
+rails s
 ```
 
 #Request

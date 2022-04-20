@@ -21,7 +21,7 @@ class ApiController < ApplicationController
     u.password = params[:password]
 
     if u.save
-      render json: { message: "Usuario criado. Faça o login" }, status: 200
+      render json: { message: "Usuario criado. Faça o login" }
     else
       render json: { message: "Tente Novamente" }, status: 400
     end

@@ -8,7 +8,7 @@ bundler install
 ```
 Rodar migrate
 ```bash
-rails db:migrat
+rails db:migrate
 ```
 
 Rodar servidor rails

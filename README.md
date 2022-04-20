@@ -17,31 +17,34 @@ rails s
 
 * user/create
 POST
+```bash
 {
     "name": "",
     "email": ",
     "password": ""
 }
-
+```
 * user/login
 POST
+```bash
 {
     "email": "",
     "password": ""
 }
-
+```
 
 ## a partir daqui só é possivel fazer request logado
 
 
 * contact/create
 POST
-
+```bash
 {
     "name": "",
     "relationship": "",
     "phone": ""
 }
+```
 Phone é um parametro não obrigatorio
 
 * contact/findContacts
@@ -50,21 +53,24 @@ Nenhum parametro (apenas contatos salvo pela conta)
 
 * contact/deleteContacts
 POST
+```bash
 {
     "id": ""
 }
+```
 Pegar id no find
 
 
 * contact/updateContacts
 POST
-
+```bash
 {
     "id": "9",
     "name": "Brunooo",
     "relationship": "goku2447",
     "phone": "7317317"
 }
+```
 Apenas o id é obrigatorio
 
 * user/sign_out

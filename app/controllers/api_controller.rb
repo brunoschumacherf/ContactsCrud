@@ -14,7 +14,13 @@ class ApiController < ApplicationController
       render json: { message: "Senha precisa estar presente" }, status: 400
       return
     end
+    user = User.where(email: params[:email]).first
 
+    unless user.nil?
+      render json: { message: "Já existe conta com esse email"  }, status: 400
+      return
+    end
+    
     u = User.new
     u.name = params[:name]
     u.email = params[:email]

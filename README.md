@@ -2,6 +2,10 @@
 
 * db https://dbdiagram.io/d/625f564d1072ae0b6ab11b1a
 
+Rodar Bundler
+```bash
+bundler install
+```
 Rodar migrate
 ```bash
 rails db:migrat

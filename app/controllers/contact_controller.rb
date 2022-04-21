@@ -49,8 +49,11 @@ class ContactController < ApiController
       render json: { message: "Esse contato não pode ser excluido" }, status: 400
       return
     end
-    contact.destroy
-    render json: { message: "Contato Excluido" }
+    if contact.destroy
+      render json: { message: "Contato Excluido" }
+    else
+      render json: { message: "Esse contato não pode ser excluido" }, status: 400
+    end
   end
 
   def updateContacts
@@ -59,6 +62,12 @@ class ContactController < ApiController
       return
     end
     contact = Usecontact.where(id: params[:id]).first
+
+    if contact.nil?
+      render json: { message: "Contato não encontrado" }, status: 400
+      return
+    end
+
     contact.email = params[:email] if params[:email].present?
     contact.relationship = params[:relationship] if params[:relationship].present?
     contact.name = params[:name] if params[:name].present?

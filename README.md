@@ -81,4 +81,9 @@ Apenas o id é obrigatorio
 
 Deslogar do usuário atual
 
-* ...
+* Coleção no postman
+
+
+```bash
+https://www.getpostman.com/collections/74d84a6d1f830ddd25f5
+```

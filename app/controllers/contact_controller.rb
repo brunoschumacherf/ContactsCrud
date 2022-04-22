@@ -62,9 +62,14 @@ class ContactController < ApiController
       return
     end
     contact = Usecontact.where(id: params[:id]).first
-
+    
     if contact.nil?
       render json: { message: "Contato não encontrado" }, status: 400
+      return
+    end
+
+    if contact.contactid != current_user.email
+      render json: { message: "Esse contato não pode ser editado" }, status: 400
       return
     end
 

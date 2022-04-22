@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'api/new'
   post 'user/create' => 'api#createUser'
   post 'user/login' => 'api#login'
   get 'user/sign_out' => 'api#sign_out'

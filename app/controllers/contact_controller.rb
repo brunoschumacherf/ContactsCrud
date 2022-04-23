@@ -76,6 +76,8 @@ class ContactController < ApiController
     contact.email = params[:email] if params[:email].present?
     contact.relationship = params[:relationship] if params[:relationship].present?
     contact.name = params[:name] if params[:name].present?
+    contact.phone = params[:phone] if params[:phone].present?
+
     if contact.save
       render json: { message: "Contato atualizado" }
     else

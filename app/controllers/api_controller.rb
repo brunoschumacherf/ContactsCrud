@@ -2,6 +2,7 @@ class ApiController < ApplicationController
   before_action :check_user, except: %i[createUser login]
 
   def createUser
+
     if params[:name].blank?
       render json: { message: "Nome precisa estar presente" }, status: 400
       return
@@ -35,7 +36,7 @@ class ApiController < ApplicationController
     u = User.new
     u.name = params[:name]
     u.email = params[:email]
-    u.password = params[:password]
+    u.password = Cryptography.encrypt_pass(params[:password])
 
     if u.save
       render json: { message: "Usuario criado. Faça o login" }
@@ -55,8 +56,13 @@ class ApiController < ApplicationController
     end
 
     user = User.where(email: params[:email]).first
-  
-    if user.password == params[:password]
+
+    if user.nil?
+      render json: { message: "Usuário não existe" }, status: 400
+      return
+    end
+
+    if params[:password] == Cryptography.decrypt_pass(user.password)
       sign_in user
       render json: { message: "Bem vindo" }
     else

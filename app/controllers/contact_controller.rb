@@ -52,7 +52,7 @@ class ContactController < ApiController
     if contact.destroy
       render json: { message: "Contato Excluido" }
     else
-      render json: { message: "Esse contato não pode ser excluido" }, status: 400
+      render json: { message: "Tente Novamente" }, status: 400
     end
   end
 

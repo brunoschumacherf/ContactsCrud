@@ -7,10 +7,7 @@ class ApiController < ApplicationController
       render json: { message: "Nome precisa estar presente" }, status: 400
       return
     end
-    if params[:email].blank?
-      render json: { message: "Email precisa estar presente"  }, status: 400
-      return
-    end
+
     if params[:password].blank?
       render json: { message: "Senha precisa estar presente" }, status: 400
       return
@@ -46,8 +43,9 @@ class ApiController < ApplicationController
   end
 
   def login
-    if params[:email].blank?
-      render json: { message: "Email precisa estar presente"  }, status: 400
+    
+    unless params[:email].match(/\A[^@\s]+@[^@\s]+\z/)
+      render json: { message: "Email Invalido" }, status: 400
       return
     end
     if params[:password].blank?

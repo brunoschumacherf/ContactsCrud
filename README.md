@@ -85,5 +85,5 @@ Deslogar do usuário atual
 
 
 ```bash
-https://www.getpostman.com/collections/74d84a6d1f830ddd25f5
+https://www.getpostman.com/collections/5948a69798507b0d6b98
 ```
